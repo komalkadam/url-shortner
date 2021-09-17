@@ -36,8 +36,8 @@ public class UrlShortnerController {
 
 	@PostMapping
 	@ResponseBody
-	@ApiOperation(value = "Save activity", notes = "Save activity", response = UrlShortner.class)
-	public ShortnedUrl saveActivity(@RequestBody UrlShortner url) throws InvalidUrlException, UnsupportedEncodingException {
+	@ApiOperation(value = "Get shortned URL", notes = "Get shortned URL", response = UrlShortner.class)
+	public ShortnedUrl getShortnedUrl(@RequestBody UrlShortner url) throws InvalidUrlException, UnsupportedEncodingException {
 		ShortnedUrl shortnedUrl = new ShortnedUrl();
 		shortnedUrl.setShortnedUrl(urlShortnerService.shortenedUrl(url.getUrl()));
 		return shortnedUrl;
