@@ -3,11 +3,14 @@
  */
 package com.komal.shortner.urlshortner.model;
 
+import org.apache.ignite.cache.query.annotations.QuerySqlField;
+
 /**
  * @author kkadam
  *
  */
-public class UrlShortner {
+public class OriginalUrl {
+	@QuerySqlField(index = true)
 	private String url;
 
 	public String getUrl() {
@@ -16,6 +19,11 @@ public class UrlShortner {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	@Override
+	public String toString() {
+		return "{url:" + url + "}";
 	}
 	
 

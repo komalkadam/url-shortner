@@ -60,6 +60,7 @@ public class InvalidUrlException extends Exception {
 	
 	public InvalidUrlException(String message) {
 		super(message);
+		this.message = message;
 	}
 
 	public HttpStatus getStatus() {

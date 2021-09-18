@@ -12,5 +12,7 @@ public interface UrlShortnerDao {
 	
 	String getOriginalUrl(String shortUrl);
 	
+	String getShortenedUrl(String originalUrl);
 
+	boolean isAlreadyUsedShortUrl(String shortUrl, String url);
 }
