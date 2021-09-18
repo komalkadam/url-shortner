@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+	<Properties>
+		<Property name="LOG_PATTERN">
+			%d{yyyy-MM-dd HH:mm:ss a} [%t] %-5level [%logger{36}(%M):%L] - %msg%n
+		</Property>
+	</Properties>
+
+	<Appenders>
+		<Console name="ConsoleAppender" target="SYSTEM_OUT"
+			follow="true">
+			<PatternLayout pattern="${LOG_PATTERN}" />
+		</Console>
+
+	</Appenders>
+
+	<Loggers>
+		<AsyncLogger name="com.komal.shortner.urlshortner" includeLocation="true" level="${env:LOG_LEVEL:-info}"
+			additivity="false">
+			<AppenderRef ref="ConsoleAppender" />
+		</AsyncLogger>
+
+		<Root level="${env:LOG_LEVEL:-info}">
+			<AppenderRef ref="ConsoleAppender" />
+		</Root>
+	</Loggers>
+</Configuration>
